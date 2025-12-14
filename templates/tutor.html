@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Tutor - AI Mentor</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <script src="/static/formatter.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>AI Mentor</h1>
+      <div>
+        <a href="/">Home</a>
+        <a href="/diagnostic">Diagnostic</a>
+        <a href="/tutor">AI Tutor</a>
+        <a href="/quiz">Quiz</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2>AI Tutor</h2>
+      <p style="text-align: center; margin-bottom: 30px; color: #4a5568;">
+        Ask me anything about Programming, DBMS, or Operating Systems. I'm here to help you learn!
+      </p>
+
+      <form method="post">
+        <div class="form-group">
+          <label for="question">Your Question:</label>
+          <input
+            type="text"
+            id="question"
+            name="question"
+            placeholder="e.g., What is normalization in DBMS?"
+            required
+          />
+        </div>
+        <button type="submit">Ask AI Tutor</button>
+      </form>
+
+      {% if response %}
+      <div class="output-box">
+        <h3 style="margin-bottom: 15px; color: #2d3748;">AI Tutor Response:</h3>
+        {{ response }}
+      </div>
+      {% endif %}
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Project Details</h3>
+          <p>
+            <strong>Project:</strong> AI Mentor for Learning – Personalized Learning Assistant<br>
+            <strong>Student:</strong> Mr Taoqeer Ahmad<br>
+            <strong>Roll No:</strong> BSF2206361<br>
+            <strong>Semester:</strong> 7th<br>
+            <strong>Session:</strong> 2022-26 Eve.
+          </p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Other Projects</h3>
+          <ul>
+            <li>
+              <a href="https://huggingface.co/spaces/taqqi28/love-calculator" target="_blank">
+                Love Calculator (AI App)
+              </a>
+            </li>
+            <li>
+              <a href="https://huggingface.co/spaces/taqqi28/unit-converter" target="_blank">
+                Unit Converter
+              </a>
+            </li>
+            <li>
+              <a href="https://huggingface.co/spaces/taqqi28/Practical_proj" target="_blank">
+                Practical Project on Hugging Face
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 AI Mentor. Built for better learning.</p>
+      </div>
+    </footer>
+  </body>
+</html>

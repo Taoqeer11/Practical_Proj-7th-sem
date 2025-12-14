@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Mentor</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <script src="/static/formatter.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>AI Mentor</h1>
+      <div>
+        <a href="/">Home</a>
+        <a href="/diagnostic">Diagnostic</a>
+        <a href="/tutor">AI Tutor</a>
+        <a href="/quiz">Quiz</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2>Personalized Learning Dashboard</h2>
+      
+      <div class="output-box">
+        <div class="formatted-content">
+          <div class="level-result">
+            <div class="level-badge">
+              {% if level == 'Strong' %}Strong Level
+              {% elif level == 'Average' %}Average Level
+              {% else %}Weak Level{% endif %}
+            </div>
+            <p>Your diagnostic assessment has been completed!</p>
+          </div>
+          
+          <div class="recommendations">
+            <h4>Recommended Next Steps:</h4>
+            <ul>
+              {% if level == 'Strong' %}
+                <li>Take advanced quizzes to challenge yourself</li>
+                <li>Help others by sharing your knowledge</li>
+                <li>Explore specialized topics in depth</li>
+                <li>Consider mentoring other students</li>
+              {% elif level == 'Average' %}
+                <li>Focus on strengthening weak areas</li>
+                <li>Practice with targeted quizzes</li>
+                <li>Ask the AI tutor for clarification on difficult concepts</li>
+                <li>Review fundamental concepts regularly</li>
+              {% else %}
+                <li>Start with basic concepts and fundamentals</li>
+                <li>Use the AI tutor extensively for explanations</li>
+                <li>Take practice quizzes regularly</li>
+                <li>Don't hesitate to ask questions</li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dashboard-links">
+        <a href="/tutor">Ask AI Tutor</a>
+        <a href="/quiz">Take Quiz</a>
+        <a href="/diagnostic">Retake Test</a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Project Details</h3>
+          <p>
+            <strong>Project:</strong> AI Mentor for Learning – Personalized Learning Assistant<br>
+            <strong>Student:</strong> Mr Taoqeer Ahmad<br>
+            <strong>Roll No:</strong> BSF2206361<br>
+            <strong>Semester:</strong> 7th<br>
+            <strong>Session:</strong> 2022-26 Eve.
+          </p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Other Projects</h3>
+          <ul>
+            <li>
+              <a href="https://huggingface.co/spaces/taqqi28/love-calculator" target="_blank">
+                Love Calculator (AI App)
+              </a>
+            </li>
+            <li>
+              <a href="https://huggingface.co/spaces/taqqi28/unit-converter" target="_blank">
+                Unit Converter
+              </a>
+            </li>
+            <li>
+              <a href="https://huggingface.co/spaces/taqqi28/Practical_proj" target="_blank">
+                Practical Project on Hugging Face
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 AI Mentor. Built for better learning.</p>
+      </div>
+    </footer>
+  </body>
+</html>
