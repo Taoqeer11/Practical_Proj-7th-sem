@@ -139,11 +139,4 @@ def quiz():
 
     return render_template("quiz.html", quiz=quiz_data)
 
-# -------------------------------
-# MAIN - RAILWAY COMPATIBLE
-# -------------------------------
-if __name__ == "__main__":
-    # Get port from Railway environment
-    port = int(os.environ.get("PORT", 5000))
-    # Bind to all interfaces for Railway
-    app.run(host="0.0.0.0", port=port, debug=False)
+# Flask app ready for import
