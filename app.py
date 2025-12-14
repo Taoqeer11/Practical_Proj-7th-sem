@@ -99,6 +99,13 @@ def generate_quiz(topic):
         return f"Quiz Generator Exception: {str(e)}"
 
 # -------------------------------
+# HEALTH CHECK
+# -------------------------------
+@app.route("/health")
+def health():
+    return {"status": "healthy", "port": os.environ.get("PORT", "unknown")}
+
+# -------------------------------
 # ROUTES
 # -------------------------------
 @app.route("/")
@@ -139,4 +146,6 @@ def quiz():
 
     return render_template("quiz.html", quiz=quiz_data)
 
-# Flask app ready for import
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
