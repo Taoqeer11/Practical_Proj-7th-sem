@@ -42,9 +42,6 @@ def ask_ai(user_question):
         response = requests.post(GROQ_URL, headers=headers, json=payload, timeout=30)
         data = response.json()
 
-        # DEBUG (visible in terminal)
-        print("Groq Tutor Response:", data)
-
         if "choices" in data:
             return data["choices"][0]["message"]["content"]
 
@@ -89,9 +86,6 @@ def generate_quiz(topic):
     try:
         response = requests.post(GROQ_URL, headers=headers, json=payload, timeout=30)
         data = response.json()
-
-        # DEBUG
-        print("Groq Quiz Response:", data)
 
         if "choices" in data:
             return data["choices"][0]["message"]["content"]
@@ -146,8 +140,10 @@ def quiz():
     return render_template("quiz.html", quiz=quiz_data)
 
 # -------------------------------
-# MAIN
+# MAIN - RAILWAY COMPATIBLE
 # -------------------------------
 if __name__ == "__main__":
+    # Get port from Railway environment
     port = int(os.environ.get("PORT", 5000))
+    # Bind to all interfaces for Railway
     app.run(host="0.0.0.0", port=port, debug=False)
